@@ -232,7 +232,7 @@ class Algo:
 def main():
     win_width,win_height = 1000,800
     window = pygame.display.set_mode((win_width,win_height))
-    pygame.display.set_caption("Bubble Sort")
+    pygame.display.set_caption("Sorting Visualiser")
     run = True
     size = 50
     key = None
@@ -245,18 +245,26 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
                     key = "bubble" #start the bubble sort process
+                    pygame.display.set_caption("bubble sort")
+
                     algo.bubble()
                     key = None
                 if event.key == pygame.K_q:
                     key = "quick"
+                    pygame.display.set_caption("quick sort")
+
                     algo.quick()
                     key = None
                 if event.key == pygame.K_m:
                     key = "Merge"
+                    pygame.display.set_caption("merge sort")
+
                     algo.mergesort(0,len(algo.array)-1)
                     # print(algo.array)
                 if event.key == pygame.K_i:
                     key = "insertion sort"
+                    pygame.display.set_caption("insertion sort")
+
                     algo.insertion_sort()
                 if event.key == pygame.K_h:
                     key = "stop"  #Halt the  process....This has yet not been implemented at the time of code upload
